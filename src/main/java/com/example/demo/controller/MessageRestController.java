@@ -25,10 +25,14 @@ public class MessageRestController {
 		@Autowired
 		MessageRepo repo;
 		
+		@GetMapping("/review/view")
+		public ResponseEntity<List<Message>> view() {
+			return ResponseEntity.ok().body(repo.findAll());
+		}
+		
 		@GetMapping("/review/view/{username}")
 		public ResponseEntity<List<Message>> view(@PathVariable String username) {
 			return ResponseEntity.ok().body(repo.findByM_reviewing(username));
-//			return repo.findAll();
 		}
 
 		@PostMapping("/review/insert")
