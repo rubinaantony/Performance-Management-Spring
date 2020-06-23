@@ -17,7 +17,8 @@ public class UserBean {
 	private String username;
 	private String password;
 	private String role;
-	
+
+	//-------------------------Constructors----------------------//
 	public UserBean(String username, String password, String role) {
 		super();
 		this.username = username;
@@ -33,16 +34,20 @@ public class UserBean {
 		this.password = password;
 		this.role = role;
 	}
+	
+//------------------------------END------------------------------//
+	
+	public UserBean() {
+		super();
+	}	
+	
+//-------------------------Getters and Setters----------------------//
 	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public UserBean() {
-		super();
-	}
-	//-------------------------Getters and Setters----------------------//
 	public int getId() {
 		return id;
 	}
@@ -61,6 +66,8 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+//--------------------------------END------------------------------//
 }
 	
 	

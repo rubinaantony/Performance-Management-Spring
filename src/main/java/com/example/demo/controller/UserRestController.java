@@ -15,6 +15,9 @@ public class UserRestController {
 	@Autowired
 	private UserService service;
 	UserRepository repo;
+	
+	
+//------------------------Checking if user is valid or not-------------------------
 	@PostMapping("/login")
 	public UserBean loginUser(@RequestBody UserBean user)throws Exception {
 		String tempu_name=user.getUsername();
@@ -29,4 +32,6 @@ public class UserRestController {
 		}
 		return ub;
 	}
+	
+//------------------------------------------------------------------------------------
 }

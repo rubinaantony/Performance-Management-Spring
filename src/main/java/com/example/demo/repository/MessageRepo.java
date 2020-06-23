@@ -10,6 +10,11 @@ import com.example.demo.bean.Message;
 
 @Repository
 public interface MessageRepo extends JpaRepository<Message,Integer>{
-	 @Query("select c from Message c where c.m_reviewing = :m_reviewing")
+	
+	//-------------To View Review Details assigned to each employees----------------
+	
+	@Query("select c from Message c where c.m_reviewing = :m_reviewing")
 	List<Message> findByM_reviewing(String m_reviewing);
+	
+	//-------------------------------------------------------------------------------
 }

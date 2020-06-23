@@ -24,22 +24,39 @@ public class MessageRestController {
 		
 		@Autowired
 		MessageRepo repo;
+
+//------------------To View Review Details For Admin ----------------
 		
 		@GetMapping("/review/view")
 		public ResponseEntity<List<Message>> view() {
 			return ResponseEntity.ok().body(repo.findAll());
 		}
+
+//----------------------------------------------------------------------
+		
+		
+//------------------To View Review Details For Employee ----------------		
 		
 		@GetMapping("/review/view/{username}")
 		public ResponseEntity<List<Message>> view(@PathVariable String username) {
 			return ResponseEntity.ok().body(repo.findByM_reviewing(username));
 		}
+		
+//------------------------------------------------------------------
+		
+		
+//------------------To Insert Review Details ------------------------
 
 		@PostMapping("/review/insert")
 		public Message insert(@RequestBody Message message) {
 
 			return repo.save(message);
 		}
+
+//--------------------------------------------------------------------
+		
+		
+//------------------To Update Review Details -------------------------
 		
 		@PostMapping("/review/update")
 		public Message update(@RequestBody Message message) {
@@ -47,12 +64,18 @@ public class MessageRestController {
 			return repo.save(message);
 		}
 		
+//--------------------------------------------------------------------
+		
+		
+//------------------To Delete Review Details -------------------------		
 		@DeleteMapping("/review/delete/{id}")
 		public List<Message> delete(@PathVariable Integer id) {
 
 			repo.deleteById(id);
 			return repo.findAll();
 		}
+		
+//---------------------------------------------------------------------
 		
 	
 

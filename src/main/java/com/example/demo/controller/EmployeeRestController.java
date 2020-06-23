@@ -23,12 +23,14 @@ public class EmployeeRestController {
 
     @Autowired
     UserRepository userRepo;
-
+//------------------To View Employee Details------------------
     @GetMapping("/employee/view")
     public ResponseEntity<List<Employee>> view() {
         return ResponseEntity.ok().body(repo.findAll());
     }
-
+//-------------------------------------------------------------
+    
+  //------------------To Insert Employee Details---------------
     @PostMapping("/employee/insert")
     public Employee insert(@RequestBody Employee employee) {
         if (repo.findByE_Username(employee.getE_username()) == null) {
@@ -37,7 +39,11 @@ public class EmployeeRestController {
         } else
             return new Employee();
     }
+ 
+//-------------------------------------------------------------
     
+    
+//------------------To Update Employee Details-----------------
     
     @PostMapping("/employee/update")
 	public Employee update(@RequestBody Employee employee) {
@@ -45,9 +51,14 @@ public class EmployeeRestController {
 		return repo.save(employee);
 	}
     
+//-------------------------------------------------------------- 
+    
+//------------------To Delete Employee Details------------------
+    
     @DeleteMapping("/employee/delete/{e_id}")
     public List<Employee> delete(@PathVariable Integer e_id) {
         repo.deleteById(e_id);
         return repo.findAll();
     }
+//--------------------------------------------------------------
 }

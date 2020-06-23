@@ -24,7 +24,7 @@ public class Employee {
 	private String e_email;
 	private String e_role;
 	
-	
+	//-------------------------Constructor----------------------//	
 	
 	public Employee(int e_id, String e_number, String e_name, String e_username, String e_password, String e_address,
 			String e_mobile, String e_email, String e_role) {
@@ -44,8 +44,10 @@ public class Employee {
 	public Employee() {
 		super();
 	}
+	
+	//-------------------------END-------------------------------------//
 
-
+	//-------------------------Getters and Setters----------------------//
 	@Column(nullable = false)
 	public int getE_id() {
 		return e_id;
@@ -117,6 +119,6 @@ public class Employee {
 	public void setE_role(String e_role) {
 		this.e_role = e_role;
 	}
-	
+	//-------------------------END----------------------//	
 
 }

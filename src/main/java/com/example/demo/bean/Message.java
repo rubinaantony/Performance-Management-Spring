@@ -20,7 +20,7 @@ public class Message {
 	private String m_message;
 	private String m_feedback;
 	
-	
+	//-------------------------Constructor----------------------//
 	public Message() {
 		super();
 	}
@@ -32,6 +32,10 @@ public class Message {
 		this.m_message = m_message;
 		this.m_feedback = m_feedback;
 	}
+	
+	//-----------------------------------------------------------//
+	
+	//-------------------------Getters and Setters----------------------//
 	public int getM_id() {
 		return m_id;
 	}
@@ -62,6 +66,6 @@ public class Message {
 	public void setM_feedback(String m_feedback) {
 		this.m_feedback = m_feedback;
 	}
-	
+	//---------------------------END---------------------------//
 
 }
